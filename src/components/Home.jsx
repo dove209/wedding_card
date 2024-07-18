@@ -40,19 +40,21 @@ const MainImg = styled.div`
 
 const AddressImg = styled.div`
   width: 100%;
-  height: 201px;
+  height: 22vh;
   position: relative;
   opacity: 0;
-  top: -90px;
+  top: -60px;
   background: no-repeat center center url('/img/address.png');
   background-size: cover;
-  transform: translateY(50px);
+  transform: translateY(100px);
   transition: all 1s;
 `;
 
 const Gallery = styled.div`
   position: relative;
-  background-color: skyblue;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s;
   .gallery_main {
     width: 100%;
   }
@@ -85,16 +87,18 @@ const Home = () => {
           entry.target.classList.add('show');
         }
       })
-    }, { threshold: 0 });
+    }, { threshold: 0.3 });
 
     observer.observe(topTitleRef.current)
     observer.observe(mainImgRef.current)
     observer.observe(addressImgRef.current)
+    observer.observe(gallayImgRef.current)
 
     return () => {
       observer.unobserve(topTitleRef.current);
       observer.unobserve(mainImgRef.current);
       observer.unobserve(addressImgRef.current);
+      observer.unobserve(gallayImgRef.current);
     };
   }, [])
 
@@ -106,7 +110,6 @@ const Home = () => {
 
       <AddressImg
         ref={addressImgRef}
-        className="up"
         src="/img/address.png"
         alt="식장 주소 이미지"
       />
