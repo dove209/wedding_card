@@ -30,7 +30,7 @@ const TopTitle = styled.div`
 
 const MainImg = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   max-height: 668px;
   background: no-repeat center center url('/img/main_img.jpg');
   background-size: cover;
