@@ -87,7 +87,7 @@ const Home = () => {
           entry.target.classList.add('show');
         }
       })
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
     observer.observe(topTitleRef.current)
     observer.observe(mainImgRef.current)
