@@ -1,11 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { styled } from 'styled-components'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// ScrollTrigger 플러그인을 GSAP에 등록
-gsap.registerPlugin(ScrollTrigger);
-
 
 const Container = styled.div`
   /* background-color:red; */
@@ -13,12 +7,21 @@ const Container = styled.div`
   max-width: 500px;
   height: 100%;
   margin: 0 auto;
+
+  .show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 `
 
 const TopTitle = styled.div`
   position: relative;
   width: 100%;
   z-index: 1;
+  top: 50px;
+  transform: translateY(-50px);
+  transition: all 1s;
   img {
     width: 100%;
   }
@@ -27,12 +30,17 @@ const TopTitle = styled.div`
 const MainImg = styled.img`
     width: 100%;
     object-fit: cover;
+    transform: translateY(50px);
+    transition: all 1s;
 `;
 
 const AddressImg = styled.img`
     width: 100%;
     position: relative;
-    top:0px; // 0 -> -100px  
+    opacity: 0;
+    top: -100px;
+    transform: translateY(50px);
+    transition: all 1s;
 `;
 
 const Gallery = styled.div`
@@ -65,29 +73,23 @@ const Home = () => {
 
 
   useEffect(() => {
-    const topTitleEle = topTitleRef.current;
-    const mainImgEle = mainImgRef.current;
-    const addressImgEle = addressImgRef.current;
-    const gallayImgEle = gallayImgRef.current;
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      })
+    }, { threshold: 0 });
 
-    // GSAP 애니메이션 설정
-    gsap.fromTo(topTitleEle, { opacity: 0, y: 0 }, { opacity: 1, y: 50, duration: 1});
-    gsap.fromTo(mainImgEle, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1});
-    gsap.fromTo(addressImgEle, { opacity: 0, y: 0 }, { opacity: 1, y: -100, duration: 1,
-      scrollTrigger: {
-        trigger: addressImgEle,
-        start: 'top 60%', // 트리거 위치: 요소의 상단이 뷰포트의 %에 도달했을 때
-        markers: false, // 디버깅을 위한 마커 표시
-      }
-    });
-    
-    gsap.fromTo(gallayImgEle, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1,
-      scrollTrigger: {
-        trigger: gallayImgEle,
-        start: 'top 80%', // 트리거 위치: 요소의 상단이 뷰포트의 %에 도달했을 때
-        markers: true, // 디버깅을 위한 마커 표시
-      }
-    });
+    observer.observe(topTitleRef.current)
+    observer.observe(mainImgRef.current)
+    observer.observe(addressImgRef.current)
+
+    return () => {
+      observer.unobserve(topTitleRef.current);
+      observer.unobserve(mainImgRef.current);
+      observer.unobserve(addressImgRef.current);
+    };
   }, [])
 
 
@@ -107,6 +109,7 @@ const Home = () => {
 
       <AddressImg 
         ref={addressImgRef}
+        className='up'
         src='/img/address.png'
         alt='식장 주소 이미지'
       /> 
