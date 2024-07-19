@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 const Container = styled.div`
@@ -18,24 +19,26 @@ const TopTitle = styled.div`
   width: 100%;
   height: 90px;
   z-index: 9;
+  opacity: 0;
   top: 50px;
   background: no-repeat center center url('/img/top_title.png');
   background-size: cover;
   transform: translateY(-50px);
-  transition: all 1s;
+  transition: transform 1s, opacity 3s;
   img {
     width: 100%;
   }
 `;
 
 const MainImg = styled.div`
+  opacity: 0;
   width: 100%;
   height: 80vh;
   max-height: 668px;
   background: no-repeat center center url('/img/main_img.jpg');
   background-size: cover;
   transform: translateY(50px);
-  transition: all 1s;
+  transition: transform 1s, opacity 3s;
 `;
 
 const AddressImg = styled.div`
@@ -47,20 +50,21 @@ const AddressImg = styled.div`
   background: no-repeat center center url('/img/address.png');
   background-size: cover;
   transform: translateY(100px);
-  transition: all 1s;
+  transition: transform 1s, opacity 3s;
 `;
 
 const Gallery = styled.div`
   position: relative;
   opacity: 0;
   transform: translateY(50px);
-  transition: all 1s;
+  transition: transform 1s, opacity 3s;
   .gallery_main {
     width: 100%;
   }
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
   const topTitleRef = useRef(null);
   const mainImgRef = useRef(null);
   const addressImgRef = useRef(null);
@@ -95,12 +99,16 @@ const Home = () => {
     observer.observe(gallayImgRef.current)
 
     return () => {
-      observer.unobserve(topTitleRef.current);
-      observer.unobserve(mainImgRef.current);
-      observer.unobserve(addressImgRef.current);
-      observer.unobserve(gallayImgRef.current);
+      if(topTitleRef.current) {observer.unobserve(topTitleRef.current)};
+      if(mainImgRef.current) {observer.unobserve(mainImgRef.current)};
+      if(addressImgRef.current) {observer.unobserve(addressImgRef.current)};
+      if(gallayImgRef.current) {observer.unobserve(gallayImgRef.current)};
     };
   }, [])
+
+  const goToLookBook = () => {
+    navigate('/lookbook')
+  }
 
   return (
     <Container>
@@ -114,7 +122,7 @@ const Home = () => {
         alt="식장 주소 이미지"
       />
 
-      <Gallery ref={gallayImgRef}>
+      <Gallery ref={gallayImgRef} onClick={goToLookBook}>
         <img
           className="gallery_main"
           src={gallayImages[gallayImgIdx]}
