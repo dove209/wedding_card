@@ -40,10 +40,10 @@ const MainImg = styled.div`
 
 const AddressImg = styled.div`
   width: 100%;
-  height: 22vh;
+  height: 23vh;
   position: relative;
   opacity: 0;
-  top: -60px;
+  top: -80px;
   background: no-repeat center center url('/img/address.png');
   background-size: cover;
   transform: translateY(100px);
