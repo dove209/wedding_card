@@ -50,14 +50,14 @@ const AddressImg = styled.div`
   background: no-repeat center center url('/img/address.png');
   background-size: cover;
   transform: translateY(100px);
-  transition: transform 1s, opacity 3s;
+  transition: transform 1s, opacity 2s;
 `;
 
 const Gallery = styled.div`
   position: relative;
   opacity: 0;
   transform: translateY(50px);
-  transition: transform 1s, opacity 3s;
+  transition: transform 1s, opacity 2s;
   .gallery_main {
     width: 100%;
   }
