@@ -163,7 +163,6 @@ const Home = () => {
 
   useEffect(() => {
     if(mainImgRef.current && mainImgRef.current) {
-
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -180,24 +179,25 @@ const Home = () => {
       observer.observe(addressImgRef.current);
       observer.observe(gallayImgRef.current);
       observer.observe(bottomRef.current);
+      return () => {
+        if (topTitleRef.current) {
+          observer.unobserve(topTitleRef.current);
+        }
+        if (mainImgRef.current) {
+          observer.unobserve(mainImgRef.current);
+        }
+        if (addressImgRef.current) {
+          observer.unobserve(addressImgRef.current);
+        }
+        if (gallayImgRef.current) {
+          observer.unobserve(gallayImgRef.current);
+        }
+        if(bottomRef.current) {observer.unobserve(bottomRef.current);}
+  
+      };
     }
     
-    return () => {
-      if (topTitleRef.current) {
-        observer.unobserve(topTitleRef.current);
-      }
-      if (mainImgRef.current) {
-        observer.unobserve(mainImgRef.current);
-      }
-      if (addressImgRef.current) {
-        observer.unobserve(addressImgRef.current);
-      }
-      if (gallayImgRef.current) {
-        observer.unobserve(gallayImgRef.current);
-      }
-      if(bottomRef.current) {observer.unobserve(bottomRef.current);}
 
-    };
   }, [topTitleRef, mainImgRef]);
 
   const goToLookBook = () => {
