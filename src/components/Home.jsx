@@ -166,6 +166,8 @@ const Home = () => {
   const addressImgRef = useRef(null);
   const gallayImgRef = useRef(null);
   const bottomRef = useRef(null);
+  const [map, setMap ] = useState(null);
+  const mapRef = useRef(null)
 
   const [gallayImgIdx, setGallayImgIdx] = useState(0);
 
@@ -226,7 +228,7 @@ const Home = () => {
     window.scrollTo({ top: 0, behavior: "smooth" }); // 부드럽게 스크롤을 상단으로 이동
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     // 카카오 맵 API 스크립트를 동적으로 로드합니다.
     const script = document.createElement("script");
     script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=ba0865e0610539648784bdb39e0ab9c5&autoload=false`;
@@ -238,7 +240,7 @@ const Home = () => {
         const container = document.getElementById("map"); // 'map'이라는 id를 가진 div에 맵을 그립니다.
         const options = {
           center: new window.kakao.maps.LatLng(37.51171, 126.9949), // 초기 맵의 중심 좌표 (서울)
-          level: 3, // 초기 맵의 확대 레벨
+          level: 4, // 초기 맵의 확대 레벨
         };
         const map = new window.kakao.maps.Map(container, options); // 맵을 생성합니다.
 
@@ -248,11 +250,20 @@ const Home = () => {
           position: markerPosition,
         });
         marker.setMap(map);
+        setMap(map)
       });
     };
-
+    
     return () => script.remove(); // 컴포넌트가 언마운트될 때 스크립트를 제거합니다.
   }, []);
+
+  const loadMap = () => {
+    setTimeout(() => {
+      const newCenter = new kakao.maps.LatLng(37.5117, 126.9949);
+      map.relayout()
+      map.setCenter(newCenter);
+    }, 100)
+  }
 
   return (
     <Container>
@@ -399,7 +410,7 @@ const Home = () => {
         </AccordionItem>
 
         {/* 지도 */}
-        <AccordionItem style={{ borderBottom: "1px solid #000" }}>
+        <AccordionItem style={{ borderBottom: "1px solid #000" }} onClick={loadMap}>
           {({ isExpanded }) => (
             <>
               <h2>
@@ -427,6 +438,7 @@ const Home = () => {
               <AccordionPanel
                 pb={4}
                 style={{ borderTop: "1px solid #000", fontWeight: "bold" }}
+                
               >
                 <h1 style={{ fontSize: 14 }}>Guide</h1>
                 <p style={{ fontSize: 13, marginTop: 15 }}>
@@ -453,6 +465,7 @@ const Home = () => {
                     marginTop: 40,
                     marginBottom: 40,
                   }}
+                  ref={mapRef}
                 ></div>
               </AccordionPanel>
             </>
