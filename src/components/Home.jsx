@@ -162,22 +162,25 @@ const Home = () => {
   }, [gallayImages.length]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    if(mainImgRef.current && mainImgRef.current) {
 
-    observer.observe(topTitleRef.current);
-    observer.observe(mainImgRef.current);
-    observer.observe(addressImgRef.current);
-    observer.observe(gallayImgRef.current);
-    observer.observe(bottomRef.current);
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(topTitleRef.current);
+      observer.observe(mainImgRef.current);
+      observer.observe(addressImgRef.current);
+      observer.observe(gallayImgRef.current);
+      observer.observe(bottomRef.current);
+    }
     
     return () => {
       if (topTitleRef.current) {
@@ -195,7 +198,7 @@ const Home = () => {
       if(bottomRef.current) {observer.unobserve(bottomRef.current);}
 
     };
-  }, []);
+  }, [topTitleRef, mainImgRef]);
 
   const goToLookBook = () => {
     navigate("/lookbook");
@@ -216,11 +219,6 @@ const Home = () => {
 
   return (
     <Container>
-      {/* <Helmet>
-        <meta property="og:title" content="재혁❤️하늬 모바일 청첩장입니다." />
-        <meta property="og:description" content="2024년 8월 31일 토요일 오후3시 세빛섬 플로팅아일랜드 2층 컨벤션 홀" />
-        <meta property="og:image" content={`${process.env.PUBLIC_URL}/img/lookbook/1.jpg`} />
-      </Helmet> */}
       <TopTitle ref={topTitleRef} />
 
       <MainImg ref={mainImgRef} />
