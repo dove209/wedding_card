@@ -329,19 +329,19 @@ const Home = () => {
                     <p>재혁</p>
                     <p>010-2398-1711</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="tel:+821023981711"><img src="/img/phone.png" /></a></p>
                   </li>
                   <li>
                     <p>아버지 방극만</p>
                     <p>010-4136-5747</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="tel:+821041365747"><img src="/img/phone.png" /></a></p>
                   </li>
                   <li>
                     <p>어머니 양종숙</p>
                     <p>010-6601-1711</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><a href="tel:+821028211386"><img src="/img/phone.png" /></a></p>
+                    <p><a href="tel:+821066011711"><img src="/img/phone.png" /></a></p>
                   </li>
                 </ul>
               </AccordionPanel>
@@ -391,19 +391,19 @@ const Home = () => {
                     <p>하늬</p>
                     <p>010-2381-2851</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="tel:+821023812851"><img src="/img/phone.png" /></a></p>
                   </li>
                   <li>
                     <p>아버지 오세연</p>
                     <p>010-2399-2851</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="tel:+821023992851"><img src="/img/phone.png" /></a></p>
                   </li>
                   <li>
                     <p>어머니 김점숙</p>
                     <p>010-2382-2851</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="tel:+821023822851"><img src="/img/phone.png" /></a></p>
                   </li>
                 </ul>
               </AccordionPanel>
