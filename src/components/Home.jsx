@@ -303,6 +303,7 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
+                        fontWeight: 'bold',
                       }}
                     >
                       <span>Jae hyuk Contact</span>
@@ -364,6 +365,7 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
+                        fontWeight: 'bold',
                       }}
                     >
                       <span>Hanee Contact</span>
@@ -422,6 +424,7 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
+                        fontWeight: 'bold',
                       }}
                     >
                       <span>Guide</span>
@@ -461,7 +464,7 @@ const Home = () => {
                   id="map"
                   style={{
                     width: "80%",
-                    height: "150px",
+                    height: "200px",
                     marginTop: 40,
                     marginBottom: 40,
                   }}
@@ -489,6 +492,7 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
+                        fontWeight: 'bold',
                       }}
                     >
                       <span>Info</span>
