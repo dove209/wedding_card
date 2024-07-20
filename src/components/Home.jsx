@@ -237,13 +237,13 @@ const Home = () => {
       window.kakao.maps.load(() => {
         const container = document.getElementById("map"); // 'map'이라는 id를 가진 div에 맵을 그립니다.
         const options = {
-          center: new window.kakao.maps.LatLng(37.5665, 126.978), // 초기 맵의 중심 좌표 (서울)
+          center: new window.kakao.maps.LatLng(37.51171, 126.9949), // 초기 맵의 중심 좌표 (서울)
           level: 3, // 초기 맵의 확대 레벨
         };
         const map = new window.kakao.maps.Map(container, options); // 맵을 생성합니다.
 
         // 마커를 추가합니다.
-        const markerPosition = new window.kakao.maps.LatLng(37.5665, 126.978);
+        const markerPosition = new window.kakao.maps.LatLng(37.51171, 126.9949);
         const marker = new window.kakao.maps.Marker({
           position: markerPosition,
         });
