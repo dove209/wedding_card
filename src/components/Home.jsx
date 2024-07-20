@@ -85,10 +85,21 @@ const TopTitle = styled.div`
   background: no-repeat center center url("/img/top_title.png");
   background-size: cover;
   transform: translateY(-50px);
-  transition: transform 1s, opacity 3s;
+  /* transition: transform 1s, opacity 3s; */
+  animation: fadeInUp 2s ease forwards;
   img {
     width: 100%;
   }
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 `;
 
 const MainImg = styled.div`
@@ -174,15 +185,15 @@ const Home = () => {
         { threshold: 0.2 }
       );
 
-      observer.observe(topTitleRef.current);
+      // observer.observe(topTitleRef.current);
       observer.observe(mainImgRef.current);
       observer.observe(addressImgRef.current);
       observer.observe(gallayImgRef.current);
       observer.observe(bottomRef.current);
       return () => {
-        if (topTitleRef.current) {
-          observer.unobserve(topTitleRef.current);
-        }
+        // if (topTitleRef.current) {
+        //   observer.unobserve(topTitleRef.current);
+        // }
         if (mainImgRef.current) {
           observer.unobserve(mainImgRef.current);
         }
@@ -392,10 +403,18 @@ const Home = () => {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4} style={{ borderTop: "1px solid #000", fontWeight: "bold" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                <h1 style={{ fontSize: 14 }}>Guide</h1>
+                <p style={{ fontSize: 13, marginTop: 15 }}>
+                  2024년 8월 31일 토요일 오후 3시<br />
+                  세빛섬 플로팅아일랜드 2F 컨벤션홀<br />
+                  서울 서초구 올림픽대로 2085-14<br />
+                  TEL 02-537-2440
+                  <br />
+                  <br />
+                  - 지하철&nbsp;&nbsp;고속터미널 6번출구 하차 후 셔틀 이용<br />
+                  - 버스&nbsp;&nbsp;반포한공.세빛섬 하차<br />
+                  - 주차&nbsp;&nbsp;세빛섬 주차장
+                </p>
               </AccordionPanel>
             </>
           )}
