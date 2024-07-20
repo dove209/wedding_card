@@ -327,20 +327,20 @@ const Home = () => {
                   <li>
                     <p>재혁</p>
                     <p>010-2398-1711</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                   <li>
                     <p>아버지 방극만</p>
                     <p>010-4136-5747</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                   <li>
                     <p>어머니 양종숙</p>
                     <p>010-6601-1711</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                 </ul>
               </AccordionPanel>
@@ -388,20 +388,20 @@ const Home = () => {
                   <li>
                     <p>하늬</p>
                     <p>010-2381-2851</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                   <li>
                     <p>아버지 오세연</p>
                     <p>010-2399-2851</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                   <li>
                     <p>어머니 김점숙</p>
                     <p>010-2382-2851</p>
-                    <p>﹒﹒</p>
-                    <p>tell</p>
+                    <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
+                    <p><img src="/img/phone.png" /></p>
                   </li>
                 </ul>
               </AccordionPanel>
