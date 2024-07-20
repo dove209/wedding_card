@@ -341,7 +341,7 @@ const Home = () => {
                     <p>어머니 양종숙</p>
                     <p>010-6601-1711</p>
                     <p style={{ fontSize: 16, fontWeight: 'bold'}}>﹒﹒</p>
-                    <p><img src="/img/phone.png" /></p>
+                    <p><a href="hel:+821028211386"><img src="/img/phone.png" /></a></p>
                   </li>
                 </ul>
               </AccordionPanel>
