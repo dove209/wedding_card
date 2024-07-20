@@ -216,11 +216,11 @@ const Home = () => {
 
   return (
     <Container>
-      <Helmet>
+      {/* <Helmet>
         <meta property="og:title" content="재혁❤️하늬 모바일 청첩장입니다." />
         <meta property="og:description" content="2024년 8월 31일 토요일 오후3시 세빛섬 플로팅아일랜드 2층 컨벤션 홀" />
         <meta property="og:image" content={`${process.env.PUBLIC_URL}/img/lookbook/1.jpg`} />
-      </Helmet>
+      </Helmet> */}
       <TopTitle ref={topTitleRef} />
 
       <MainImg ref={mainImgRef} />
