@@ -456,7 +456,7 @@ const Home = () => {
                   <br />
                   - 지하철&nbsp;&nbsp;고속터미널 6번출구 하차 후 셔틀 이용
                   <br />
-                  - 버스&nbsp;&nbsp;반포한공.세빛섬 하차
+                  - 버스&nbsp;&nbsp;반포한강공원.세빛섬 하차
                   <br />- 주차&nbsp;&nbsp;세빛섬 주차장
                 </p>
 
