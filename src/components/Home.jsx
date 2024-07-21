@@ -75,8 +75,7 @@ const Container = styled.div`
   }
 
   .my_font {
-    font-family: "Konnect";
-    font-style: normal;
+    font-family: "Konnect-Regular";
   }
 `;
 
@@ -327,7 +326,7 @@ const Home = () => {
                 pb={4}
                 style={{ borderTop: "1px solid #000", fontWeight: "bold" }}
               >
-                <h1 style={{ fontSize: 14 }}>Contact</h1>
+                <h1 style={{ fontSize: 14 }} className="my_font">Contact</h1>
                 <ul className="ul1">
                   <li>
                     <p>재혁</p>
@@ -388,7 +387,7 @@ const Home = () => {
                 pb={4}
                 style={{ borderTop: "1px solid #000", fontWeight: "bold" }}
               >
-                <h1 style={{ fontSize: 14 }}>Contact</h1>
+                <h1 style={{ fontSize: 14 }} className="my_font">Contact</h1>
                 <ul className="ul1">
                   <li>
                     <p>하늬</p>
@@ -443,9 +442,9 @@ const Home = () => {
               <AccordionPanel
                 pb={4}
                 style={{ borderTop: "1px solid #000", fontWeight: "bold" }}
-                
+              
               >
-                <h1 style={{ fontSize: 14 }}>Guide</h1>
+                <h1 style={{ fontSize: 14 }} className="my_font">Guide</h1>
                 <p style={{ fontSize: 13, marginTop: 15 }}>
                   2024년 8월 31일 토요일 오후 3시
                   <br />
@@ -511,7 +510,7 @@ const Home = () => {
                 pb={4}
                 style={{ borderTop: "1px solid #000", fontWeight: "bold" }}
               >
-                <h1 style={{ fontSize: 14 }}>info</h1>
+                <h1 style={{ fontSize: 14 }} className="my_font">Info</h1>
                 <ul className="ul2">
                   <li>
                     <div>
