@@ -311,7 +311,7 @@ const Home = () => {
                     >
                       <span className="my_font">Jae hyuk Contact</span>
                       <span style={{ fontSize: 12 }}>
-                        방극만, 양종숙이 장남 재혁
+                        방극만, 양종숙의 장남 재혁
                       </span>
                     </div>
                   </Box>
