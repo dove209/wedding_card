@@ -144,7 +144,8 @@ const Gallery = styled.div`
   transform: translateY(50px);
   transition: transform 1s, opacity 2s;
   .gallery_main {
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
 `;
 
@@ -175,7 +176,7 @@ const Home = () => {
 
   const [gallayImgIdx, setGallayImgIdx] = useState(0);
 
-  const gallayImages = ["/img/gallery_no.jpg", "/img/gallery.jpg"];
+  const gallayImages = ["/img/gallery_no.png", "/img/gallery.png"];
 
   useEffect(() => {
     const interval = setInterval(() => {
