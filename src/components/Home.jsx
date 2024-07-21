@@ -73,6 +73,11 @@ const Container = styled.div`
       }
     }
   }
+
+  .my_font {
+    font-family: "Konnect";
+    font-style: normal;
+  }
 `;
 
 const TopTitle = styled.div`
@@ -81,7 +86,7 @@ const TopTitle = styled.div`
   height: 90px;
   z-index: 9;
   opacity: 0;
-  top: 50px;
+  top: 30px;
   background: no-repeat center center url("/img/top_title.png");
   background-size: cover;
   transform: translateY(-50px);
@@ -106,7 +111,7 @@ const MainImg = styled.div`
   width: 100%;
   height: 80vh;
   max-height: 668px;
-  background: no-repeat center center url("/img/main_img.jpg");
+  background: no-repeat center center url("/img/main_img.jpeg");
   background-size: cover;
   transform: translateY(50px);
   animation: fadeInUp 2s ease forwards;
@@ -124,10 +129,10 @@ const MainImg = styled.div`
 
 const AddressImg = styled.div`
   width: 100%;
-  height: 23vh;
+  height: 24vh;
   position: relative;
   opacity: 0;
-  top: -80px;
+  top: -45px;
   background: no-repeat center center url("/img/address.png");
   background-size: cover;
   transform: translateY(100px);
@@ -303,10 +308,9 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
-                        fontWeight: 'bold',
                       }}
                     >
-                      <span>Jae hyuk Contact</span>
+                      <span className="my_font">Jae hyuk Contact</span>
                       <span style={{ fontSize: 12 }}>
                         방극만, 양종숙이 장남 재혁
                       </span>
@@ -365,10 +369,9 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
-                        fontWeight: 'bold',
                       }}
                     >
-                      <span>Hanee Contact</span>
+                      <span className="my_font">Haney Contact</span>
                       <span style={{ fontSize: 12 }}>
                         오세연, 김점숙의 장녀 하늬
                       </span>
@@ -424,10 +427,9 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
-                        fontWeight: 'bold',
                       }}
                     >
-                      <span>Guide</span>
+                      <span className="my_font">Guide</span>
                       <span style={{ fontSize: 12 }}>오시는 길</span>
                     </div>
                   </Box>
@@ -492,10 +494,9 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingRight: 10,
-                        fontWeight: 'bold',
                       }}
                     >
-                      <span>Info</span>
+                      <span className="my_font">Info</span>
                       <span style={{ fontSize: 12 }}>마음 전하실 곳</span>
                     </div>
                   </Box>

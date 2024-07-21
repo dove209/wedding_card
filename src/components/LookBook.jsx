@@ -168,7 +168,7 @@ const LookBook = () => {
 
   return (
     <Container>
-      <img src='/img/lookbook/1.jpg'  alt='lookbook 이미지'/>
+      <img src='/img/lookbook/1.jpeg'  alt='lookbook 이미지'/>
       <RowImg style={{ margin: '8vh 0', }}>
         <img src='/img/lookbook/2.jpg'  alt='lookbook 이미지'/>
         <img src='/img/lookbook/3.jpg'  alt='lookbook 이미지'/>
